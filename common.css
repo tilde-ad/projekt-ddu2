@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Handjet";
+    src: url(Handjet,Spectral/Handjet/Handjet-VariableFont_ELGR,ELSH,wght.ttf);
+}
+
+body {
+    font-family: "Handjet";
+}
+
+#index {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.home-links {
+    font-size: 30px;
+    color: lightblue;
+    background-color: darkcyan;
+    padding: 10px;
+    border-radius: 20px;
+}
