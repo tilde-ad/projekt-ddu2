@@ -26,3 +26,12 @@ body {
     text-align: center;
     margin-top: 18px;
 }
+
+#numbers {
+    display: flex;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 10px;
+}
