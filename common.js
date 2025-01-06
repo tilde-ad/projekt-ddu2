@@ -1,3 +1,8 @@
+function randomNumber() {
+    Number = Math.ceil(99 * Math.random());
+    return Number;
+}
+
 const body = document.querySelector("body");
 const homebutton = document.querySelector(".home-button");
 const a = document.createElement("a");
@@ -6,8 +11,6 @@ const input = document.createElement("input");
 const h2 = document.createElement("h2");
 const createButton = document.createElement("button");
 const script = document.querySelector("script");
-
-let inputText = input.value;
 
 homebutton.appendChild(a);
 a.setAttribute("class", "home-links");
@@ -21,15 +24,44 @@ numbers.append(createButton);
 createButton.textContent = "Create";
 numbers.setAttribute("id", "numbers");
 
-
-console.log(inputText);
-
-
-function randomNumber() {
-    Number = Math.ceil(100 * Math.random());
-    return Number;
+input.value = "95";
+function startGrid() {
+    let grid = document.createElement("div");
+    grid.setAttribute("id", "grid"); document.body.appendChild(grid);
+    for (let i = 0; i < 95; i++) {
+        let cell = document.createElement("div");
+        grid.appendChild(cell);
+        cell.setAttribute("class", "cell");
+        cell.textContent = randomNumber();
+    }
 }
+startGrid();
 
-console.log(randomNumber());
+
+createButton.addEventListener("click", function () {
+    const inputText = input.value;
+    let grid = document.getElementById("grid");
+
+    if (grid) {
+        grid.innerHTML = "";
+    } else {
+        let grid = document.createElement("div");
+        body.insertBefore(grid, script);
+        grid.setAttribute("id", "grid");
+    }
+
+
+    for (let i = 0; i < input.value; i++) {
+        let cell = document.createElement("div");
+        grid.appendChild(cell);
+        cell.setAttribute("class", "cell");
+        cell.textContent = randomNumber();
+    }
+
+})
+
+
+
+
 
 

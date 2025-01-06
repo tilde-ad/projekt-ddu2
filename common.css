@@ -5,6 +5,7 @@
 
 body {
     font-family: "Handjet";
+    background-color: lightblue;
 }
 
 #index {
@@ -34,4 +35,26 @@ body {
     align-items: center;
     margin-top: 50px;
     gap: 10px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(19, 50px);
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.cell {
+    background-color: darkcyan;
+    width: 10px;
+    height: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+
 }
