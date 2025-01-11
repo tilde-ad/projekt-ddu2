@@ -11,6 +11,7 @@ const input = document.createElement("input");
 const h2 = document.createElement("h2");
 const createButton = document.createElement("button");
 const script = document.querySelector("script");
+let array = [];
 
 homebutton.appendChild(a);
 a.setAttribute("class", "home-links");
@@ -30,17 +31,21 @@ function startGrid() {
     grid.setAttribute("id", "grid"); body.insertBefore(grid, script);
     for (let i = 0; i < 95; i++) {
         let cell = document.createElement("div");
+        let randomNumbers = randomNumber();
+        array.push(randomNumbers);
         grid.appendChild(cell);
         cell.setAttribute("class", "cell");
-        cell.textContent = randomNumber();
+        cell.textContent = randomNumbers;
     }
 }
 startGrid();
 
 
+
 createButton.addEventListener("click", function () {
     const inputText = input.value;
     let grid = document.getElementById("grid");
+    array = [];
 
     if (grid) {
         grid.innerHTML = "";
@@ -50,12 +55,14 @@ createButton.addEventListener("click", function () {
         grid.setAttribute("id", "grid");
     }
 
-
     for (let i = 0; i < input.value; i++) {
         let cell = document.createElement("div");
+        let randomNumbers = randomNumber();
+        array.push(randomNumbers);
         grid.appendChild(cell);
         cell.setAttribute("class", "cell");
-        cell.textContent = randomNumber();
+        cell.textContent = randomNumbers;
+
     }
 
 })
