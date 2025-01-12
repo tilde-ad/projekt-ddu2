@@ -6,13 +6,17 @@
 body {
     font-family: "Handjet";
     background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-#index {
+#links {
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-
+    gap: 20px;
 }
 
 .home-links {
@@ -21,11 +25,13 @@ body {
     background-color: darkcyan;
     padding: 10px;
     border-radius: 15px;
+
 }
 
 .home-button {
     text-align: center;
-    margin-top: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #numbers {
@@ -33,7 +39,6 @@ body {
     height: 10px;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     gap: 10px;
 }
 
@@ -41,7 +46,6 @@ body {
     display: grid;
     grid-template-columns: repeat(19, 50px);
     gap: 10px;
-    margin-top: 20px;
     justify-content: center;
 }
 
