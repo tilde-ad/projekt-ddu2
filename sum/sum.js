@@ -5,6 +5,7 @@ const sumAllBox = document.createElement("div");
 const h2Marked = document.createElement("h2");
 const sumMarkedBox = document.createElement("div");
 const resetButton = document.createElement("button");
+let sum = 0;
 
 body.insertBefore(sumContainerTop, grid);
 body.insertBefore(sumContainerBottom, grid);
@@ -20,8 +21,54 @@ resetButton.textContent = "Reset";
 sumAllBox.textContent = " - ";
 sumMarkedBox.textContent = " - ";
 
+
 sumContainerTop.setAttribute("class", "sum-container");
 sumContainerBottom.setAttribute("class", "sum-container");
 sumAllBox.setAttribute("class", "boxes");
 sumMarkedBox.setAttribute("class", "boxes");
 
+function sumOfAll() {
+    let sumTotal = 0;
+    for (let i = 0; i < array.length; i++) {
+        sumTotal += array[i];
+    }
+    sumAllBox.textContent = sumTotal;
+}
+
+function sumOfMarked() {
+    let cells = document.querySelectorAll("#grid .cell");
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].addEventListener("click", function () {
+            if (cells[i].style.backgroundColor === "blue") {
+                cells[i].style.backgroundColor = "";
+                sum -= parseInt(cells[i].textContent);
+            } else {
+                cells[i].style.backgroundColor = "blue";
+                sum += parseInt(cells[i].textContent);
+            }
+            sumMarkedBox.textContent = sum;
+            if (sum === 0) {
+                sumMarkedBox.textContent = " - ";
+            }
+        });
+    }
+
+}
+sumOfAll();
+sumOfMarked();
+
+createButton.addEventListener("click", function () {
+    sumOfAll();
+    sumOfMarked();
+    sumMarkedBox.textContent = " - ";
+    sum = 0;
+});
+
+resetButton.addEventListener("click", function () {
+    let cells = document.querySelectorAll("#grid .cell");
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].style.backgroundColor = "";
+    }
+    sumMarkedBox.textContent = " - ";
+    sum = 0;
+});

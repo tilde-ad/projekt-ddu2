@@ -1,5 +1,5 @@
 function randomNumber() {
-    Number = Math.ceil(99 * Math.random());
+    let Number = Math.ceil(99 * Math.random());
     return Number;
 }
 
