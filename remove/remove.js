@@ -31,17 +31,15 @@ newRandomNumber.addEventListener("click", function () {
 
 function highlightMatchingCells(number) {
     let cells = document.querySelectorAll("#grid .cell");
-    cells.forEach(cell => {
-        if (cell.textContent === "X") {
-            cell.style.backgroundColor = "darkblue";
-        }
-        else if (parseInt(cell.textContent) === number) {
-            cell.style.backgroundColor = "blue";
+    for (let i = 0; i < cells.length; i++) {
+        if (cells[i].textContent === "X") {
+            cells[i].style.backgroundColor = "darkblue";
+        } else if (parseInt(cells[i].textContent) === number) {
+            cells[i].style.backgroundColor = "blue";
         } else {
-            cell.style.backgroundColor = "";
-
+            cells[i].style.backgroundColor = "";
         }
-    });
+    }
 }
 
 
@@ -57,12 +55,12 @@ removeButton.addEventListener("click", function () {
 function replaceMatchingCells(number) {
     let cells = document.querySelectorAll("#grid .cell");
     let count = 0;
-    cells.forEach(cell => {
-        if (parseInt(cell.textContent) === number) {
-            cell.textContent = "X";
-            cell.style.backgroundColor = "darkblue";
+    for (let i = 0; i < cells.length; i++) {
+        if (parseInt(cells[i].textContent) === number) {
+            cells[i].textContent = "X";
+            cells[i].style.backgroundColor = "darkblue";
             count++;
         }
-    });
+    }
     return count;
 }
