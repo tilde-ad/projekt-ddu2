@@ -1,10 +1,10 @@
 @font-face {
-    font-family: "Handjet";
-    src: url(Handjet,Spectral/Handjet/Handjet-VariableFont_ELGR,ELSH,wght.ttf);
+    font-family: "silk";
+    src: url(Silkscreen/Silkscreen-Regular.ttf);
 }
 
 body {
-    font-family: "Handjet";
+    font-family: "silk";
     background-color: lightblue;
     display: flex;
     flex-direction: column;
@@ -14,9 +14,19 @@ body {
 }
 
 #links {
+.links {
     margin-top: 20px;
     display: flex;
     gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #131e3a;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .home-links {
