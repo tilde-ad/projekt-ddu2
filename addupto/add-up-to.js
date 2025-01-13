@@ -13,7 +13,7 @@ finderButton.textContent = "Find to cells that add up";
 addInput.value = "179";
 
 div.setAttribute("id", "numbers");
-div.style.margin = "10px 0";
+div.setAttribute("class", "wantMargin");
 
 finderButton.addEventListener("click", function () {
     let target = parseInt(addInput.value);
@@ -29,8 +29,8 @@ finderButton.addEventListener("click", function () {
             let num1 = parseInt(cells[i].textContent);
             let num2 = parseInt(cells[j].textContent);
             if (num1 + num2 === target) {
-                cells[i].style.backgroundColor = "darkblue";
-                cells[j].style.backgroundColor = "darkblue";
+                cells[i].style.backgroundColor = "#0e4c92";
+                cells[j].style.backgroundColor = "#0e4c92";
                 found = true;
                 break;
             }

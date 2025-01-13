@@ -3,6 +3,20 @@ function randomNumber() {
     return Number;
 }
 
+function startGrid() {
+    const grid = document.createElement("div");
+    grid.setAttribute("id", "grid");
+    body.insertBefore(grid, script);
+    for (let i = 0; i < 95; i++) {
+        const cell = document.createElement("div");
+        const randomNumbers = randomNumber();
+        array.push(randomNumbers);
+        grid.appendChild(cell);
+        cell.setAttribute("class", `cell`);
+        cell.textContent = randomNumbers;
+    }
+}
+
 const body = document.querySelector("body");
 const homebutton = document.querySelector(".home-button");
 const a = document.createElement("a");
@@ -14,35 +28,22 @@ const script = document.querySelector("script");
 let array = [];
 
 homebutton.appendChild(a);
-a.setAttribute("class", "home-links");
-a.setAttribute("href", "../index.html");
-a.textContent = "Home"
-
 body.insertBefore(numbers, script);
 numbers.appendChild(h2);
 numbers.appendChild(input);
-h2.textContent = "How many numbers in the grid?";
 numbers.append(createButton);
-createButton.textContent = "Create";
+
+a.setAttribute("class", "home-links");
+a.setAttribute("href", "../index.html");
 numbers.setAttribute("id", "numbers");
 
+a.textContent = "Home"
+h2.textContent = "How many numbers in the grid?";
+createButton.textContent = "Create";
+
 input.value = "95";
-function startGrid() {
-    let grid = document.createElement("div");
-    grid.setAttribute("id", "grid");
-    body.insertBefore(grid, script);
-    for (let i = 0; i < 95; i++) {
-        let cell = document.createElement("div");
-        let randomNumbers = randomNumber();
-        array.push(randomNumbers);
-        grid.appendChild(cell);
-        cell.setAttribute("class", `cell ${numbers}`);
-        cell.textContent = randomNumbers;
-    }
-}
+
 startGrid();
-
-
 
 createButton.addEventListener("click", function () {
     const inputText = input.value;
@@ -62,15 +63,9 @@ createButton.addEventListener("click", function () {
         let randomNumbers = randomNumber();
         array.push(randomNumbers);
         grid.appendChild(cell);
-        cell.setAttribute("class", `cell ${numbers}`);
+        cell.setAttribute("class", `cell`);
         cell.textContent = randomNumbers;
 
     }
 
-
-})
-
-
-
-
-
+});

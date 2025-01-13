@@ -1,13 +1,5 @@
-.boxes {
-    border: 1px solid darkcyan;
-    width: 100px;
-    border-radius: 4px;
-    text-align: center;
-}
-
 #divRemove {
     display: flex;
-    margin-top: 40px;
-    justify-content: center;
+    margin-top: 20px;
     gap: 10px;
 }

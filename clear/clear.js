@@ -31,13 +31,13 @@ function addCellEventListeners() {
     }
 }
 
-let clearButton = document.createElement("button");
+const clearButton = document.createElement("button");
 body.insertBefore(clearButton, grid);
 clearButton.textContent = "Fill Cleared";
-clearButton.style.margin = "10px 0";
+clearButton.setAttribute("class", "wantMargin");
 
 clearButton.addEventListener("click", function () {
-    let cells = document.querySelectorAll("#grid .cell");
+    const cells = document.querySelectorAll("#grid .cell");
     for (let i = 0; i < cells.length; i++) {
         cells[i].style.backgroundColor = "";
         cells[i].textContent = array[i];
