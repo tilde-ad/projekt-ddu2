@@ -49,7 +49,6 @@ resetButton.textContent = "Reset";
 sumAllBox.textContent = " - ";
 sumMarkedBox.textContent = " - ";
 
-
 sumContainerTop.setAttribute("class", "sum-container");
 sumContainerBottom.setAttribute("class", "sum-container");
 sumAllBox.setAttribute("class", "boxes");
@@ -66,10 +65,8 @@ createButton.addEventListener("click", function () {
 });
 
 resetButton.addEventListener("click", function () {
-    let cells = document.querySelectorAll("#grid .cell");
-    for (let i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = "";
-    }
-    sumMarkedBox.textContent = " - ";
-    sum = 0;
+    resetGrid(function () {
+        sumMarkedBox.textContent = " - ";
+        sum = 0;
+    });
 });

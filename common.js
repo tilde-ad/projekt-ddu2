@@ -1,6 +1,5 @@
 function randomNumber() {
-    let Number = Math.ceil(99 * Math.random());
-    return Number;
+    return Math.ceil(99 * Math.random());
 }
 
 function startGrid() {
@@ -16,6 +15,16 @@ function startGrid() {
         cell.textContent = randomNumbers;
     }
 }
+
+function resetGrid(callback) {
+    let cells = document.querySelectorAll("#grid .cell");
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].style.backgroundColor = "";
+    }
+    if (callback) {
+        callback();
+    }
+};
 
 const body = document.querySelector("body");
 const homebutton = document.querySelector(".home-button");
@@ -67,5 +76,4 @@ createButton.addEventListener("click", function () {
         cell.textContent = randomNumbers;
 
     }
-
 });

@@ -33,11 +33,9 @@ pickNumber.textContent = "Click on a number to find copies";
 resetButton.textContent = "Reset";
 
 resetButton.addEventListener("click", function () {
-    let cells = document.querySelectorAll(".cell");
-    for (let i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = "";
-    }
-    pickNumber.textContent = "Click on a number to find copies";
+    resetGrid(function () {
+        pickNumber.textContent = "Click on a number to find copies";
+    });
 });
 
 addCellEventListeners();
